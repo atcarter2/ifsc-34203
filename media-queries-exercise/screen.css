@@ -1,0 +1,58 @@
+/* apply a natural box layout model to all elements, but allowing components to change 
+
+http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+
+*/
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*Base CSS*/
+body {
+  font-family: "Droid Serif";
+  background: #374e5a;
+  overflow: auto;
+}
+
+div.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.col {
+  border-radius: 3px;
+  background-color: #5a7b6c;
+  padding: 20px;
+}
+/* Base */
+.col:nth-child(odd) {
+  background-color: #8fb87f;
+}
+.col p {
+  color: #fff;
+  margin: 0px;
+  text-shadow: 1px 1px #000;
+}
+
+@media screen and (max-width: 600px) .fancy {
+  display: none;
+}
+
+/*retina specific --- https://goo.gl/Pgu6y */
+
+/* @media
+only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and ( min--moz-device-pixel-ratio: 1.25),
+only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+only screen and ( min-device-pixel-ratio: 1.25),
+only screen and ( min-resolution: 200dpi),
+only screen and ( min-resolution: 1.25dppx)
+{
+	.fancy{display:block; text-align:center}
+} */
