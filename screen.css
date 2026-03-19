@@ -1,0 +1,19 @@
+body {
+  background-color: rgb(147, 140, 171);
+  text-decoration-color: antiquewhite;
+}
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(44, 43, 40);
+  text-shadow: 2px 2px 4px antiquewhite;
+}
+@media screen and (max-width: 500px) {
+  body {
+    background-color: rgb(187, 186, 209);
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: rgb(193, 187, 212);
+  }
+}

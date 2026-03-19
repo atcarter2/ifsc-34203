@@ -253,6 +253,27 @@ main.container > * {
     flex: 1;
   }
 }
+@media only screen and (min-width: 992px) {
+  /* Widen the layout from 900px to 1000px */
+  .container,
+  header.container,
+  main.container {
+    max-width: 1000px;
+  }
+
+  /* Increase vertical spacing between sections */
+  #about,
+  #skills,
+  #experience,
+  #education {
+    margin-bottom: 30px;
+  }
+
+  /* Extra padding inside the main content area */
+  main {
+    padding: 40px 30px;
+  }
+}
 
 /*----------------------Edge Case Tweaks-----------------------*/
 
