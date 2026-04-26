@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio and Video Demo</title>
+
+    <link rel="stylesheet" href="../video-audio-demo/assets/css/screen.css" />
+    <link rel="stylesheet" href="../video-audio-demo/assets/css/skin.css" />
+
+    <style>
+      video-player {
+        display: block;
+        max-width: 640px;
+        margin: 20px auto;
+        aspect-ratio: 16 / 9;
+      }
+    </style>
+  </head>
+  <body>
+    <audio-player class="media-default-skin">
+      <audio-skin>
+        <audio slot="media" controls>
+          <source
+            src="../video-audio-demo/assets/resources/pixels.mp3"
+            type="audio/mpeg"
+          />
+          <source
+            src="../video-audio-demo/assets/resources/pixels.wav"
+            type="audio/wav"
+          />
+          <source
+            src="../video-audio-demo/assets/resources/pixels.ogg"
+            type="audio/ogg"
+          />
+          Your browser does not support the audio element.
+        </audio>
+      </audio-skin>
+    </audio-player>
+    <video-player class="media-default-skin">
+      <video-skin>
+        <video slot="media" width="640" height="360" playsinline controls>
+          <source
+            src="https://stream.mux.com/6oXplbpkXUlXIYd4Gf4Z7IqKlrONEUOW19M3wbTzvbk.m3u8"
+            type="application/x-mpegURL"
+          />
+
+          <source
+            src="../video-audio-demo/assets/resources/dogsvidmp4.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="../video-audio-demo/assets/resources/dogsvidmp4.webm"
+            type="video/webm"
+          />
+          <source
+            src="../video-audio-demo/assets/resources/dogsvidmp4.ogv"
+            type="video/ogg"
+          />
+
+          Your browser does not support HTML5 video.
+        </video>
+      </video-skin>
+    </video-player>
+
+    <script type="module" src="https://jsdelivr.net"></script>
+  </body>
+</html>

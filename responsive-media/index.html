@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Media Demo</title>
+    <link rel="stylesheet" href="screen.css" />
+  </head>
+  <body>
+    <h1>Check out these responsive cool dudes!</h1>
+
+    <img
+      src="funky-gator735.jpg"
+      alt="a cool aligator in a pink fuzzy coat"
+      width="735"
+      height="1057"
+      srcset="
+        funky-gator735.jpg 735w,
+        funky-gator368.jpg 368w,
+        funky-gator245.jpg 245w
+      "
+      sizes="(max-width: 300px) 245px,
+             (max-width: 500px) 368px,
+             735px"
+    />
+
+    <picture>
+      <source media="(min-width: 721px)" srcset="burger-knight720.jpg" />
+      <source media="(min-width: 361px)" srcset="burger-knight360.jpg" />
+      <img
+        src="burger-knight240.jpg"
+        alt="a mighty cheeseburger knight"
+        width="720"
+        height="832"
+        style="width: 100%; height: auto"
+      />
+    </picture>
+  </body>
+</html>
