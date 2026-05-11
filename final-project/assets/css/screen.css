@@ -1,0 +1,386 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  display: grid;
+  background-color: lemonchiffon;
+  min-height: 100vh;
+  width: 100%;
+  /* I had to look up how to get the side columns smaller to get it where I wanted */
+  grid-template-columns: 50px repeat(8, 1fr) 50px;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas: "header" "nav" "main" "footer";
+}
+#masthead {
+  grid-area: header;
+  grid-column: 1 / span 10;
+  height: 300px;
+  background-image: url("../img/banner.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#masthead h1 {
+  color: whitesmoke;
+  font-size: 6rem;
+  font-family: "Cinzel", serif;
+  text-shadow: 2px 2px 10px black;
+  margin: 0;
+  text-transform: uppercase;
+}
+.navbar {
+  grid-area: nav;
+  grid-column: 1 / span 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hotpink;
+  padding: 15px 30px;
+  position: relative;
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+.navbar a {
+  text-decoration: none;
+  color: black;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+}
+.logo {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+main {
+  grid-area: main;
+  justify-self: start;
+  grid-column: 2 / span 8;
+  padding: 40px 0;
+  width: 100%;
+  max-width: 1100px;
+}
+h1,
+h2,
+h3 {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  color: #222;
+}
+p {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+/*I basically tried to copy how old wiki pages and the fandom wiki sites show a pciture and a brief intro at the top of a page*/
+#campaign {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+#campaign .campaign-text-content {
+  flex: 1;
+}
+#campaign picture {
+  flex: 1;
+  max-width: 500px;
+}
+#campaign img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #663399;
+  box-shadow: 0 10px 20px black;
+}
+/*The Player cards*/
+.player-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 20px;
+}
+.player-card {
+  background-color: #663399;
+  color: whitesmoke;
+  display: flex;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid gold;
+  box-shadow: 5px 5px 15px black;
+}
+.player-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid whitesmoke;
+  margin-right: 20px;
+}
+.player-info {
+  flex: 1;
+}
+.player-name {
+  font-family: "Cinzel", serif;
+  margin: 0 0 5px 0;
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+.player-class {
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  color: whitesmoke;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.player-bio {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  color: whitesmoke;
+  line-height: 1.4;
+  margin: 0;
+}
+/* I looked up how to make the cards "zoom" to give focus*/
+.player-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    z-index 0s;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+/*W3schools was pretty clutch, and some stackoverflow, and css-tricks.com*/
+.player-card:hover,
+.player-card:active {
+  transform: scale(1.1);
+  box-shadow: 0 20px 40px black;
+  z-index: 10;
+  background-color: #663399;
+}
+.player-card:hover .player-img {
+  border-color: #ffd700;
+  transition: border-color 0.3s ease;
+}
+/*Campaign cards I added shadows here. I tried to add shadows to text to make it more readable but counldn't quite get the look I wanted. I twas either too subtle or too bold with text but I like it under the cards*/
+.campaign-card {
+  display: flex;
+  align-items: flex-start;
+  background-color: #eee8aa;
+  color: #222;
+  margin: 30px auto;
+  max-width: 900px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 4px solid #663399;
+  box-shadow: 0 10px 20px black;
+}
+.adventure-info {
+  display: flex;
+  flex-direction: column;
+}
+.campaign-card img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+.campaign-card p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.adventure-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.8rem;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#footer {
+  grid-column: 1 / span 10;
+  background-color: hotpink;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+.footer-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/*NPC Generator I wanted it to be a stand alone box*/
+.npc-gen {
+  background-color: #4169e1;
+  color: white;
+  padding: 40px;
+  border-radius: 15px;
+  border: 3px solid gold;
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  box-shadow: 0 10px 30px black;
+}
+/* I tried to just take as many of the setting from figma as I could*/
+#generate-btn {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  background-color: #663399;
+  color: whitesmoke;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+#generate-btn:hover {
+  background-color: #663399;
+  transform: scale(1.05);
+}
+.npc-result {
+  background-color: rgba(255, 255, 255, 0.1);
+
+  padding: 20px;
+  border-radius: 10px;
+}
+#npc-name {
+  font-family: "Cinzel", serif;
+  color: gold;
+  margin-top: 0;
+}
+#npc-bio {
+  font-family: "Cormorant Garamond", serif;
+  color: whitesmoke;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+#footer a {
+  text-decoration: none;
+  color: black;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+/*I added a hamburger for the mobile version*/
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navbar {
+  position: relative;
+  z-index: 1000;
+}
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #663399;
+}
+/*media queries time the mobile part was a bit of a pain but tbh my target audience is going to look at the site almost entirely on desktop*/
+@media (max-width: 1024px) {
+  body {
+    grid-template-columns: 20px repeat(8, 1fr) 20px;
+  }
+  #masthead h1 {
+    font-size: 4.5rem;
+  }
+}
+/* This covers Tablets and Phones */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: hotpink;
+    padding: 20px 0;
+    z-index: 9999;
+    border-bottom: 2px solid #663399;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  #masthead h1 {
+    font-size: 3.5rem;
+  }
+
+  .player-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #campaign {
+    flex-direction: column;
+  }
+
+  #campaign picture {
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "nav" "main" "footer";
+  }
+
+  #masthead,
+  .navbar,
+  main,
+  #footer {
+    grid-column: 1 / -1;
+  }
+
+  #masthead h1 {
+    font-size: 2.5rem;
+  }
+
+  .campaign-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .campaign-card img {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+  }
+}
