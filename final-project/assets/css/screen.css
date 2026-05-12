@@ -37,7 +37,7 @@ body {
   grid-area: nav;
   grid-column: 1 / span 10;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: hotpink;
   padding: 15px 30px;
@@ -45,10 +45,11 @@ body {
 }
 .navbar ul {
   display: flex;
+  justify-content: space-evenly;
+  gap: 100px;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 30px;
 }
 .navbar a {
   text-decoration: none;
@@ -63,7 +64,7 @@ body {
 }
 main {
   grid-area: main;
-  justify-self: start;
+  justify-self: center;
   grid-column: 2 / span 8;
   padding: 40px 0;
   width: 100%;
@@ -310,7 +311,6 @@ p {
     font-size: 4.5rem;
   }
 }
-/* This covers Tablets and Phones */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -320,7 +320,6 @@ p {
     transform: translateY(-50%);
     z-index: 1001;
   }
-
   .navbar ul {
     display: none;
     flex-direction: column;
@@ -333,19 +332,47 @@ p {
     z-index: 9999;
     border-bottom: 2px solid #663399;
   }
-
   .navbar ul.active {
     display: flex;
   }
-
   #masthead h1 {
     font-size: 3.5rem;
   }
-
   .player-grid {
     grid-template-columns: 1fr;
   }
+  #campaign {
+    flex-direction: column;
+  }
+  #campaign picture {
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    /* I was having trouble spacing the text a bit aways from the edge of the screen */
+    grid-template-columns: 15px 1fr 15px;
+    grid-template-areas:
+      "header header header"
+      "nav    nav    nav"
+      "main   main   main"
+      "footer footer footer";
+  }
+  #masthead,
+  .navbar,
+  main,
+  #footer {
+    grid-column: 1 / -1;
+  }
+  main {
+    grid-column: 2;
+    width: auto;
+    padding: 20px 0;
+  }
 
+  #masthead h1 {
+    font-size: 2.5rem;
+  }
   #campaign {
     flex-direction: column;
   }
@@ -353,30 +380,13 @@ p {
   #campaign picture {
     max-width: 100%;
   }
-}
-@media (max-width: 480px) {
-  body {
-    grid-template-columns: 1fr;
-    grid-template-areas: "header" "nav" "main" "footer";
-  }
-
-  #masthead,
-  .navbar,
-  main,
-  #footer {
-    grid-column: 1 / -1;
-  }
-
-  #masthead h1 {
-    font-size: 2.5rem;
-  }
-
   .campaign-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
+    padding: 15px;
   }
-
   .campaign-card img {
     margin-right: 0;
     margin-bottom: 20px;

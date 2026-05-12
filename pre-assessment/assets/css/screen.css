@@ -1,0 +1,91 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+/*the aterisk at the top is the wildcard. It applies to everything. 
+The margin and padding reset any spacing or instructions from the web browser. 
+So it bascially resets the website to a blank setting*/
+body {
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  background-color: #171717; /*I made it all dark mode prematurely*/
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5em;
+  background-image: url(../img/backgroiund.jpg);
+  background-repeat: repeat-x;
+}
+#container {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+  background-color: #171717;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+#header {
+  background-image: url(../img/pre-masthead.webp);
+  background-repeat: repeat-x;
+  height: 140px;
+}
+#header h1 a {
+  display: block;
+  height: 140px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#nav {
+  background-color: #000;
+}
+#nav ul {
+  list-style-type: none;
+  margin-left: 10px;
+}
+#nav ul li {
+  display: inline;
+  height: 35px;
+  line-height: 35px;
+}
+#nav ul li a {
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+#nav ul li a:link,
+#nav ul li a:visited {
+  text-decoration: none;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: #000;
+  color: #fff;
+}
+#nav ul li a:hover {
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #ccc;
+}
+#content {
+  margin: 20px;
+}
+#content p {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+#footer {
+  background-color: #000;
+  color: #fff;
+  height: 25px;
+}
+#footer h6 {
+  font-size: 12px;
+  line-height: 25px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.alert {
+  background: hotpink;
+}
